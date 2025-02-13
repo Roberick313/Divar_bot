@@ -109,8 +109,8 @@ class Divar:
                 pic_num = int(pic_num[-1]) # type: ignore
                 left_arrow = self.driver.find_element(By.TAG_NAME,"html")
                 for i in range(pic_num):
-                    image = pic_element.find_element(By.TAG_NAME,'img')
-                    src = requests.get(image.get_attribute("src")) # type:ignore
+                    image_element = pic_element.find_element(By.TAG_NAME,'img')
+                    src = requests.get(image_element.get_attribute("src")) # type:ignore
                     newpath = fr".\divar_data\{name}"
                     if not os.path.exists(newpath):
                         os.makedirs(newpath)
